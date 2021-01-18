@@ -1,0 +1,36 @@
+#app {
+  display: flex;
+}
+
+#app div {
+  flex: 1;
+}
+
+#left {
+  padding: 10px;
+}
+
+#right {
+  padding: 10px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 16px;
+  overflow-y: auto;
+}
+
+#left textarea {
+  height: calc(100vh - 215px);
+}
+
+#right textarea {
+  height: calc(100vh - 100px);
+}
+
+.err_msg {
+  color: red;
+}

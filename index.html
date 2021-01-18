@@ -4,24 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div id="app">
-      <textarea v-model="jsonStr" cols="30" rows="10"></textarea>
-      <textarea v-model="jsonStrOfMock" cols="30" rows="10"></textarea>
+      <div id="left">
+        <div>
+          请在下方填入 Mock.js 模板语法（失去焦点自动格式化，并生成数据）
+        </div>
+        <textarea v-model="jsonStr" @blur="onBlur"></textarea>
+        <div v-show="errMsg" class="err_msg">错误消息：{{ errMsg }}</div>
+
+        <pre style="background-color: #f6f8fa;">
+
+  已扩展 Mock.Random 占位符：
+
+  1. @phone()，手机号码
+  2. @tel()，固定电话号码（国内）
+  3. @date.now()，当前毫秒数
+        </pre>
+      </div>
+      <div id="right">
+        <div>生成的数据：</div>
+        <textarea v-model="jsonStrOfMock"></textarea>
+      </div>
     </div>
 
     <script src="./lib/vue.js"></script>
     <script src="./lib/mock.js"></script>
-    <script>
-      ;((window) => {
-        window.vm = new Vue({
-          data: {
-            jsonStr: '',
-            jsonStrOfMock: ''
-          }
-        }).$mount('#app')
-      })(window)
-    </script>
+    <script src="./index.js"></script>
   </body>
 </html>
