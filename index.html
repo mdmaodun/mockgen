@@ -13,7 +13,7 @@
         <div>
           请在下方填入 Mock.js 模板语法（失去焦点自动格式化，并生成数据）
         </div>
-        <textarea v-model="jsonStr" @blur="onBlur"></textarea>
+        <textarea v-model="jsonStr" @blur="onBlur" ref="leftTextarea"></textarea>
         <div v-show="errMsg" class="err_msg" v-text="`错误消息：${ errMsg }`"></div>
 
         <pre style="background-color: #f6f8fa;">

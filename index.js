@@ -49,6 +49,11 @@
           this.errMsg = err.message
         }
       }
+    },
+    mounted() {
+      this.$refs.leftTextarea.focus()
+      this.$refs.leftTextarea.selectionStart = 1
+      this.$refs.leftTextarea.selectionEnd = 1
     }
   }).$mount('#app')
 })(window)
