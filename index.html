@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mock Result</title>
+    <title>Mock Gen</title>
     <link rel="icon" type="image/svg" href="./logo-2.svg" />
     <link rel="stylesheet" href="index.css" />
   </head>
@@ -14,7 +14,7 @@
           请在下方填入 Mock.js 模板语法（失去焦点自动格式化，并生成数据）
         </div>
         <textarea v-model="jsonStr" @blur="onBlur"></textarea>
-        <div v-show="errMsg" class="err_msg">错误消息：{{ errMsg }}</div>
+        <div v-show="errMsg" class="err_msg" v-text="`错误消息：${ errMsg }`"></div>
 
         <pre style="background-color: #f6f8fa;">
 
